@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il mio profilo - PGRC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profilo.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navigation">
+            <h1 class="logo"><a href="../index.html">PGRC</a></h1>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="ricerca.html">Ricerca</a></li>
+                <li><a href="ricettario.html">Il Ricettario</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content profile-page">
+
+        <!-- RIEPILOGO UTENTE -->
+        <section class="profile-card profile-summary">
+            <div class="profile-avatar" id="profile-avatar" aria-hidden="true"></div>
+
+            <div class="profile-identity">
+                <h2 id="profile-username"></h2>
+                <p id="profile-email"></p>
+                <p class="profile-since">Iscritto dal <time id="profile-since"></time></p>
+            </div>
+
+            <ul class="profile-stats">
+                <li><strong id="stat-ricette">0</strong><span>Ricette nel ricettario</span></li>
+                <li><strong id="stat-preferite">0</strong><span>Ricette preferite</span></li>
+                <li><strong id="stat-recensioni">0</strong><span>Recensioni</span></li>
+            </ul>
+
+            <button type="button" id="logout-btn" class="btn-outline">Esci</button>
+        </section>
+
+        <div class="profile-grid">
+
+            <!-- DATI PERSONALI -->
+            <section class="profile-card">
+                <h3>Dati personali</h3>
+                <p id="profile-message" class="form-message" role="alert" aria-live="polite"></p>
+
+                <form id="profile-form" class="profile-form">
+                    <div class="form-group">
+                        <label for="username">Nome utente</label>
+                        <input type="text" id="username" name="username" required autocomplete="username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Indirizzo email</label>
+                        <input type="email" id="email" name="email" required autocomplete="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="favorite-dishes">Piatti preferiti</label>
+                        <textarea id="favorite-dishes" name="favorite-dishes" rows="3"
+                                  placeholder="Separali con una virgola"></textarea>
+                        <ul class="dish-tags" id="dish-tags"></ul>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Salva modifiche</button>
+                        <button type="reset" class="btn-outline">Annulla</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- CAMBIO PASSWORD -->
+            <section class="profile-card">
+                <h3>Cambia password</h3>
+                <p id="password-message" class="form-message" role="alert" aria-live="polite"></p>
+
+                <form id="password-form" class="profile-form">
+                    <div class="form-group">
+                        <label for="current-password">Password attuale</label>
+                        <input type="password" id="current-password" name="current-password" required autocomplete="current-password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="new-password">Nuova password</label>
+                        <input type="password" id="new-password" name="new-password" required minlength="6" autocomplete="new-password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-new-password">Conferma nuova password</label>
+                        <input type="password" id="confirm-new-password" name="confirm-new-password" required minlength="6" autocomplete="new-password">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Aggiorna password</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+        <!-- RICETTE PREFERITE -->
+        <section class="profile-card">
+            <div class="section-header">
+                <h3>Le mie ricette preferite</h3>
+                <a href="ricettario.html" class="section-link">Vai al ricettario</a>
+            </div>
+            <p class="section-hint">Sono le ricette del tuo ricettario contrassegnate con il cuore.</p>
+
+            <div id="favorites-container" class="favorites-grid"></div>
+        </section>
+
+        <!-- CANCELLAZIONE PROFILO -->
+        <section class="profile-card danger-zone">
+            <h3>Elimina profilo</h3>
+            <p>
+                L'eliminazione è definitiva: verranno cancellati il tuo account, il ricettario
+                con le note private e tutte le recensioni che hai pubblicato.
+            </p>
+            <p id="delete-message" class="form-message" role="alert" aria-live="polite"></p>
+
+            <form id="delete-form" class="delete-form">
+                <div class="form-group">
+                    <label for="delete-password">Inserisci la password per confermare</label>
+                    <input type="password" id="delete-password" name="delete-password" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn-danger">Elimina definitivamente</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 PGRC - Piattaforma Gestione Ricette di Cucina</p>
+    </footer>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/profilo.js"></script>
+</body>
+</html>

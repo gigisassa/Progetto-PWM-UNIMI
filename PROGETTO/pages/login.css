@@ -1,0 +1,274 @@
+/* =========================
+   RESET BASE
+========================= */
+:root {
+    --primary-color: #e74c3c;
+    --secondary-color: #fcd422;
+    --background-color: hsl(41, 100%, 71%);
+    --text-color: #e67e22;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   STILI GENERALI
+========================= */
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    background-image: url(../images/sfondo_pizza.png);
+    background-repeat: repeat;
+    background-size: 200px;
+}
+
+/* =========================
+   HEADER E NAVIGAZIONE
+========================= */
+.main-header {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 1rem 0;
+}
+
+.main-header a:visited{
+    color:var(--text-color)
+}
+.main-header a:hover{
+    color: rgb(241, 19, 19);
+}
+
+.navigation {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 1.8rem;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* =========================
+   AREA PRINCIPALE LOGIN
+========================= */
+.main-content {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.login-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 420px;
+    padding: 2rem;
+
+ 
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 0.8rem;
+    color: #2c3e50;
+}
+
+.login-container p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* =========================
+   FORM LOGIN
+========================= */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.form-group input {
+    padding: 0.85rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+/* Focus ben visibile per accessibilità */
+.form-group input:focus {
+    outline: none;
+    border-color: #e67e22;
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
+}
+
+/* =========================
+   OPZIONI FORM
+========================= */
+.form-options {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* =========================
+   BOTTONE LOGIN
+========================= */
+.btn-login {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 0.9rem 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-login:hover {
+    background-color: #cf711f;
+}
+
+.btn-login:active {
+    transform: scale(0.98);
+}
+
+/* =========================
+   LINK SOTTO AL FORM
+========================= */
+.login-links {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.login-links p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.login-links a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-links a:hover {
+        color: rgb(241, 19, 19);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.main-footer {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .login-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 1.2rem;
+        border-radius: 8px;
+    }
+
+    .logo a {
+        font-size: 1.5rem;
+    }
+
+    .login-container h2 {
+        font-size: 1.4rem;
+    }
+
+    .form-group input,
+    .btn-login {
+        font-size: 0.95rem;
+    }
+}

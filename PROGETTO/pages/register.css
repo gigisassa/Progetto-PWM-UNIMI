@@ -1,0 +1,201 @@
+
+.main-content {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.register-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-container {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 420px;
+    padding: 2rem;
+
+}
+
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 0.8rem;
+    color: #2c3e50;
+}
+
+.register-container p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* =========================
+   FORM REGISTRAZIONE
+========================= */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* textarea */
+.form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* Focus accessibile */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #e67e22;
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
+}
+
+/* =========================
+   CHECKBOX
+========================= */
+.checkbox-group {
+    margin-top: 0.3rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin-top: 0.2rem;
+    accent-color: #e67e22;
+}
+
+/* =========================
+   BOTTONE REGISTRAZIONE
+========================= */
+.btn-register {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 0.95rem 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-register:hover {
+    background-color: #cf711f;
+}
+
+.btn-register:active {
+    transform: scale(0.98);
+}
+
+/* =========================
+   LINK SOTTO AL FORM
+========================= */
+.register-links {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.register-links p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.register-links a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-links a:hover {
+    text-decoration: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .register-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-container {
+        padding: 1.2rem;
+        border-radius: 8px;
+    }
+
+    .logo a {
+        font-size: 1.5rem;
+    }
+
+    .register-container h2 {
+        font-size: 1.4rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .btn-register {
+        font-size: 0.95rem;
+    }
+
+    .checkbox-label {
+        font-size: 0.9rem;
+    }
+}

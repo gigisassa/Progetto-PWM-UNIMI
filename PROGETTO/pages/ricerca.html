@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricerca Ricette - PGRC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ricerca.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navigation">
+            <h1 class="logo"><a href="../index.html">PGRC</a></h1>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="ricettario.html">Il Ricettario</a></li>
+                <li data-auth="user" class="nav-user" hidden>
+                    <a href="profilo.html" class="user-chip" title="Vai al tuo profilo">
+                        <span class="user-avatar" aria-hidden="true"></span>
+                        <span class="user-name"></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="search-page">
+            <div class="search-container">
+                <h2>Ricerca ricette</h2>
+                <p class="search-intro">
+                    Cerca una ricetta per nome, ingrediente principale, lettera iniziale oppure per testo descrittivo.
+                </p>
+
+                <form class="search-form" id="recipe-search-form" action="#" method="get">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="search-type">Tipo di ricerca</label>
+                            <select id="search-type" name="search-type">
+                                <option value="name">Per nome del piatto</option>
+                                <option value="ingredient">Per ingrediente</option>
+                                <option value="letter">Per lettera iniziale</option>
+                                <option value="text">Per testo descrittivo</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group form-group-large">
+                            <label for="search-query">Parola chiave</label>
+                            <input
+                                type="search"
+                                id="search-query"
+                                name="search-query"
+                                placeholder="Es. pasta, chicken, b..."
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group button-group">
+                            <button type="submit" class="btn-search">Cerca</button>
+                        </div>
+                    </div>
+                </form>
+
+                <section class="search-info">
+                    <div class="info-box">
+                        <h3>Suggerimenti di ricerca</h3>
+                        <ul>
+                            <li>Scrivi il nome completo o parziale del piatto.</li>
+                            <li>Prova un ingrediente principale, ad esempio “chicken” o “rice”.</li>
+                            <li>Per lettera iniziale inserisci una sola lettera.</li>
+                            <li>Per testo descrittivo scrivi una o più parole intere, ad esempio “oven baked” o “slow cook”: vengono trovate le ricette che le contengono tutte (le lettere singole vengono ignorate).</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Risultati</h3>
+                        <p id="results-message">Nessuna ricerca effettuata.</p>
+                    </div>
+                </section>
+
+                <section class="results-section">
+                    <h3>Ricette trovate</h3>
+                    <div id="search-results" class="recipes-grid">
+                       
+                    </div>
+
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 PGRC - Piattaforma Gestione Ricette di Cucina</p>
+    </footer>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/reviews.js"></script>
+    <script src="../js/catalog.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/nav.js"></script>
+</body>
+</html>

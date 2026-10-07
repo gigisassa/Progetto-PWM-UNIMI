@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PGRC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navigation">
+            <h1 class="logo"><a href="../index.html">PGRC</a></h1>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="register.html">Registrati</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="login-section">
+            <div class="login-container">
+                <h2>Accedi al tuo account</h2>
+                <p>Inserisci email e password per entrare nel tuo ricettario personale.</p>
+
+                <p id="form-message" class="form-message" role="alert" aria-live="polite"></p>
+
+                <form class="login-form" id="login-form" action="#" method="post" autocomplete="on">
+                    <div class="form-group">
+                        <label for="email">Indirizzo email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="esempio@email.it"
+                            required
+                            autocomplete="username"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Inserisci la password"
+                            required
+                            autocomplete="current-password"
+                        >
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember-me">
+                            Ricordami
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-login">Accedi</button>
+                </form>
+
+                <div class="login-links">
+                    <p>Non hai ancora un account? <a href="register.html">Registrati</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 PGRC - Piattaforma Gestione Ricette di Cucina</p>
+    </footer>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>
