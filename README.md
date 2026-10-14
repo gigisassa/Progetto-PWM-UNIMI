@@ -29,40 +29,38 @@ utenti, sessioni e dati personali sono gestiti nel web storage del browser.
 │       │   └── index.html
 │       └── ricettario/
 │           └── index.html
-├── assets/
-│   ├── css/
-│   │   ├── base.css                   # Stili comuni a tutte le pagine
-│   │   ├── home.css                   # Stili specifici della home
-│   │   ├── components/
-│   │   │   └── navigation.css         # Header e menu responsive condivisi
-│   │   ├── layouts/
-│   │   │   └── internal.css           # Layout delle pagine interne
-│   │   └── pages/                     # Stili specifici, per area
-│   │       ├── auth/                  # login.css, register.css
-│   │       ├── account/               # profilo.css
-│   │       └── recipes/               # ricerca.css, ricetta.css, ricettario.css
-│   ├── js/
-│   │   ├── core/
-│   │   │   └── storage.js             # Accesso a localStorage/sessionStorage
-│   │   ├── services/                  # Logica condivisa
-│   │   │   ├── auth.js
-│   │   │   ├── catalog.js
-│   │   │   ├── notes.js
-│   │   │   └── reviews.js
-│   │   ├── components/
-│   │   │   └── navigation.js          # Menu e stato di autenticazione
-│   │   └── pages/                     # Script che gestiscono le singole pagine
-│   │       ├── auth/                  # login.js, register.js
-│   │       ├── account/               # profilo.js
-│   │       └── recipes/               # search.js, ricettario.js, ricetta.js,
-│   │                                  # ricetta-note.js, ricetta-recensioni.js
-│   └── images/
-│       ├── backgrounds/
-│       │   └── sfondo_pizza.png
-│       └── placeholders/
-│           └── not-found.jpg
-└── scripts/
-    └── check_structure.py             # Verifica dei percorsi e delle dipendenze
+└── assets/
+    ├── css/
+    │   ├── base.css                   # Stili comuni a tutte le pagine
+    │   ├── home.css                   # Stili specifici della home
+    │   ├── components/
+    │   │   └── navigation.css         # Header e menu responsive condivisi
+    │   ├── layouts/
+    │   │   └── internal.css           # Layout delle pagine interne
+    │   └── pages/                     # Stili specifici, per area
+    │       ├── auth/                  # login.css, register.css
+    │       ├── account/               # profilo.css
+    │       └── recipes/               # ricerca.css, ricetta.css, ricettario.css
+    ├── js/
+    │   ├── core/
+    │   │   └── storage.js             # Accesso a localStorage/sessionStorage
+    │   ├── services/                  # Logica condivisa
+    │   │   ├── auth.js
+    │   │   ├── catalog.js
+    │   │   ├── notes.js
+    │   │   └── reviews.js
+    │   ├── components/
+    │   │   └── navigation.js          # Menu e stato di autenticazione
+    │   └── pages/                     # Script che gestiscono le singole pagine
+    │       ├── auth/                  # login.js, register.js
+    │       ├── account/               # profilo.js
+    │       └── recipes/               # search.js, ricettario.js, ricetta.js,
+    │                                  # ricetta-note.js, ricetta-recensioni.js
+    └── images/
+        ├── backgrounds/
+        │   └── sfondo_pizza.png
+        └── placeholders/
+            └── not-found.jpg
 ```
 
 ## Avvio locale
@@ -118,14 +116,3 @@ La scheda ricetta passa a una colonna fino a 900px; ricerca, ricettario e
 preferiti riducono automaticamente il numero di colonne. Pulsanti e voci di
 navigazione hanno un'altezza minima di 44px, i campi dei moduli usano caratteri
 di almeno 16px e i testi lunghi vanno a capo senza allargare la pagina.
-
-## Verifica della struttura
-
-```sh
-python3 scripts/check_structure.py
-```
-
-Il controllo usa solo la libreria standard di Python e verifica i riferimenti
-locali in HTML, CSS e JavaScript e l'ordine delle dipendenze degli script.
-Controlla anche che i collegamenti alle cartelle abbiano uno slash finale e
-un `index.html`, e segnala i percorsi locali assoluti.
