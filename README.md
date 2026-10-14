@@ -65,14 +65,21 @@ utenti, sessioni e dati personali sono gestiti nel web storage del browser.
 
 ## Avvio locale
 
-Dalla radice del repository:
+Il sito va aperto da un server statico, in uno di questi due modi.
+
+**Python**, dalla radice del repository:
 
 ```sh
 python3 -m http.server 8000
 ```
 
-Aprire nel browser il server locale sulla porta `8000`. Il server serve
-automaticamente gli `index.html` delle cartelle. La ricerca e i dettagli delle
+Aprire poi nel browser il server locale sulla porta `8000`.
+
+**Visual Studio Code**, con l'estensione Live Server: clic destro su
+`index.html` → **Open with Live Server**.
+
+In entrambi i casi il server serve automaticamente gli `index.html` delle
+cartelle. La ricerca e i dettagli delle
 ricette richiedono una connessione a TheMealDB. Per pubblicare il sito su un
 hosting statico, usare la radice del repository come directory del sito.
 
