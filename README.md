@@ -3,7 +3,7 @@
 Progetto per l'esame di Programmazione Web e Mobile del corso Sicurezza dei
 Sistemi e delle Reti - Online dell'UNIMI.
 
-PGRC è una piattaforma statica per cercare ricette, gestire un ricettario
+MyRicettario è una piattaforma statica per cercare ricette, gestire un ricettario
 personale, aggiungere preferiti, note private e recensioni. Usa HTML, CSS e
 JavaScript senza una fase di compilazione. Le ricette provengono da TheMealDB;
 utenti, sessioni e dati personali sono gestiti nel web storage del browser.

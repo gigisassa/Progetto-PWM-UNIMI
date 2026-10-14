@@ -1,7 +1,7 @@
 /*
  * Recensioni delle ricette.
  *
- * TheMealDB non fornisce recensioni: sono dati propri di PGRC, salvati in
+ * TheMealDB non fornisce recensioni: sono dati propri di MyRicettario, salvati in
  * localStorage "reviews" e collegati alla ricetta tramite idMeal.
  *
  *   { [recipeId]: [ { id, recipeId, userId, dataPreparazione: "YYYY-MM-DD",
