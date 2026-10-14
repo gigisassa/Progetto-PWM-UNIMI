@@ -194,6 +194,11 @@ function rememberSearchInHistory(searchType, searchQuery) {
     history.replaceState(null, "", `?${params}`);
 }
 
+// "Trovata 1 ricetta." / "Trovate 8 ricette."
+function foundMessage(count) {
+    return count === 1 ? "Trovata 1 ricetta." : `Trovate ${count} ricette.`;
+}
+
 function showNoResultsMessage() {
     resultsMessage.textContent = "Nessuna ricetta trovata per la ricerca effettuata.";
     searchResultsContainer.innerHTML = "";
@@ -258,7 +263,7 @@ async function runSearch(searchType, searchQuery) {
 
         const meals = await enrichMealsIfNeeded(data.meals, searchType);
 
-        resultsMessage.textContent = `Trovate ${meals.length} ricette.`;
+        resultsMessage.textContent = foundMessage(meals.length);
         renderRecipes(meals);
 
         saveToLocalStorage("lastSearchResults", meals);
@@ -295,7 +300,7 @@ async function runTextSearch(searchQuery) {
             return;
         }
 
-        resultsMessage.textContent = `Trovate ${meals.length} ricette.`;
+        resultsMessage.textContent = foundMessage(meals.length);
         renderRecipes(meals);
 
         saveToLocalStorage("lastSearchResults", meals);
@@ -330,7 +335,7 @@ function loadSearchFromUrl() {
     const savedResults = JSON.parse(localStorage.getItem("lastSearchResults") || "[]");
 
     if (savedType === searchTypeSelect.value && savedQuery === query && savedResults.length > 0) {
-        resultsMessage.textContent = `Trovate ${savedResults.length} ricette.`;
+        resultsMessage.textContent = foundMessage(savedResults.length);
         renderRecipes(savedResults);
     } else {
         runSearch(searchTypeSelect.value, query);
