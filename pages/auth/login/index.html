@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PGRC</title>
+    <link rel="stylesheet" href="../../../assets/css/base.css">
+    <link rel="stylesheet" href="../../../assets/css/components/navigation.css">
+    <link rel="stylesheet" href="../../../assets/css/layouts/internal.css">
+    <link rel="stylesheet" href="../../../assets/css/pages/auth/login.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navigation" aria-label="Navigazione principale">
+            <h1 class="logo"><a href="../../../">PGRC</a></h1>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+                <span class="nav-toggle-icon" aria-hidden="true"></span>
+                <span>Menu</span>
+            </button>
+            <ul class="nav-menu" id="primary-menu">
+                <li><a href="../../../">Home</a></li>
+                <li><a href="../register/">Registrati</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="login-section">
+            <div class="login-container">
+                <h2>Accedi al tuo account</h2>
+                <p>Inserisci email e password per entrare nel tuo ricettario personale.</p>
+
+                <p id="form-message" class="form-message" role="alert" aria-live="polite"></p>
+
+                <form class="login-form" id="login-form" action="#" method="post" autocomplete="on">
+                    <div class="form-group">
+                        <label for="email">Indirizzo email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="esempio@email.it"
+                            required
+                            autocomplete="username"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Inserisci la password"
+                            required
+                            autocomplete="current-password"
+                        >
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember-me">
+                            Ricordami
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-login">Accedi</button>
+                </form>
+
+                <div class="login-links">
+                    <p>Non hai ancora un account? <a href="../register/">Registrati</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 PGRC - Piattaforma Gestione Ricette di Cucina</p>
+    </footer>
+
+    <script src="../../../assets/js/core/storage.js"></script>
+    <script src="../../../assets/js/services/auth.js"></script>
+    <script src="../../../assets/js/pages/auth/login.js"></script>
+    <script src="../../../assets/js/components/navigation.js"></script>
+</body>
+</html>

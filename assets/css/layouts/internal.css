@@ -1,0 +1,14 @@
+/* Varianti delle pagine interne. Caricare dopo base.css e prima dello stile della pagina. */
+body {
+    background-image: url(../../images/backgrounds/sfondo_pizza.png);
+    background-repeat: repeat;
+    background-size: 200px;
+}
+
+.main-header a {
+    color: var(--text-color);
+}
+
+.main-content a:hover {
+    color: rgb(241, 19, 19);
+}

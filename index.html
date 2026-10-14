@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGRC - Piattaforma Gestione Ricette Cucina</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components/navigation.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navigation" aria-label="Navigazione principale">
+            <h1 class="logo"><a href="./">PGRC</a></h1>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+                <span class="nav-toggle-icon" aria-hidden="true"></span>
+                <span>Menu</span>
+            </button>
+            <ul class="nav-menu" id="primary-menu">
+                <!-- data-auth="user": solo utente collegato, data-auth="guest": solo visitatore (gestito da assets/js/components/navigation.js) -->
+                <li data-auth="user" hidden><a href="pages/recipes/ricettario/">Il Ricettario</a></li>
+                <li><a href="pages/recipes/ricerca/">Ricerca Avanzata</a></li>
+                <li data-auth="guest"><a href="pages/auth/login/">Login</a></li>
+                <li data-auth="user" class="nav-user" hidden>
+                    <a href="pages/account/profilo/" class="user-chip" title="Vai al tuo profilo">
+                        <span class="user-avatar" aria-hidden="true"></span>
+                        <span class="user-name"></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="main-content">
+        <section class="search-section" aria-labelledby="home-search-title">
+            <h2 id="home-search-title">Cerca Ricette</h2>
+            <!-- Invio con GET: il browser apre pages/recipes/ricerca/?search-type=name&search-query=... -->
+            <form class="search-form" action="pages/recipes/ricerca/" method="get">
+                <input type="hidden" name="search-type" value="name">
+                <label class="visually-hidden" for="search-input">Nome della ricetta</label>
+                <input type="search" id="search-input" name="search-query" placeholder="Cerca una ricetta per nome..." required
+                       pattern="[A-Za-zÀ-ÿ' \-]*[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ' \-]*"
+                       title="Inserisci almeno una lettera; niente numeri o simboli.">
+                <button type="submit">Cerca</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 PGRC - Piattaforma Gestione Ricette di Cucina</p>
+    </footer>
+
+    <script src="assets/js/core/storage.js"></script>
+    <!-- All'avvio scarica il catalogo delle ricette nel web storage (usato dalla ricerca per testo) -->
+    <script src="assets/js/services/catalog.js"></script>
+    <script src="assets/js/components/navigation.js"></script>
+</body>
+</html>

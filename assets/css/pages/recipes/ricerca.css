@@ -1,0 +1,314 @@
+.search-page {
+    width: 100%;
+    padding: clamp(1rem, 3vw, 2rem) clamp(0.5rem, 2vw, 1rem);
+    display: flex;
+    justify-content: center;
+}
+
+.search-container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: rgba(255, 248, 220, 0.95);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: clamp(1rem, 3vw, 2rem);
+}
+
+.search-container h2 {
+    margin-bottom: 0.5rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--primary-color);
+}
+
+.search-intro {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #8a4b08;
+}
+
+/* FORM */
+.search-form {
+    margin-bottom: 2rem;
+    padding: clamp(0.75rem, 2vw, 1.5rem);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 11rem;
+    min-width: 0;
+}
+
+.form-group-large {
+    flex: 2 1 16rem;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #8a4b08;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.8rem 1rem;
+    border: 1px solid #d9a441;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background-color: #fffef8;
+    color: #5c3410;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+}
+
+.button-group {
+    flex: 0 1 auto;
+}
+
+.btn-search {
+    min-height: 44px;
+    padding: 0.85rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-search:hover {
+    background-color: #c0392b;
+}
+
+.btn-search:active {
+    transform: scale(0.98);
+}
+
+/* BOX INFO */
+.search-info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.info-box {
+    background-color: rgba(255, 255, 255, 0.75);
+    border-left: 6px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: clamp(0.85rem, 2vw, 1.2rem);
+    box-shadow: var(--box-shadow);
+}
+
+.info-box h3 {
+    margin-bottom: 0.8rem;
+    color: var(--primary-color);
+}
+
+.info-box p,
+.info-box li {
+    color: #7a4a12;
+    font-size: 0.95rem;
+}
+
+.info-box ul {
+    padding-left: 1.2rem;
+}
+
+/* RISULTATI */
+.results-section h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/*
+ * Il contenitore da 1200px ammette al massimo quattro colonne da 15rem.
+ * Il minimo si adatta anche agli schermi più stretti e le card isolate
+ * restano leggibili senza allargarsi a tutta la pagina desktop.
+ */
+.recipes-grid {
+    --grid-gap: clamp(1rem, 2vw, 1.5rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    justify-content: center;
+    justify-items: center;
+    gap: var(--grid-gap);
+}
+
+.recipe-card {
+    width: 100%;
+    max-width: 22rem;
+    background-color: rgba(255, 255, 255, 0.88);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* L'immagine è un link alla scheda della ricetta */
+.recipe-card-image {
+    display: block;
+    width: calc(100% - 2rem);
+    max-width: 12rem;
+    margin: 1rem auto 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.recipe-card-image:hover img,
+.recipe-card-image:focus-visible img {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+.recipe-card-content {
+    padding: 1rem;
+}
+
+.recipe-card-content h4 {
+    margin-bottom: 0.6rem;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/* Il nome della ricetta è un link alla scheda, con lo stesso aspetto del titolo */
+.recipe-card-title {
+    display: block; /* tutta l'area del titolo è cliccabile, anche su più righe */
+    min-height: 44px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.recipe-card-title:hover,
+.recipe-card-title:focus-visible {
+    text-decoration: underline;
+}
+
+.recipe-card-content p {
+    margin-bottom: 0.4rem;
+    color: #7a4a12;
+    font-size: 0.95rem;
+}
+
+/* Ricerca per testo: estratto del procedimento con la parola trovata */
+.recipe-card-content .match-snippet {
+    margin: 0.6rem 0;
+    padding: 0.5rem 0.7rem;
+    border-left: 3px solid var(--secondary-color);
+    background-color: #fffbea;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.match-snippet mark {
+    background-color: var(--secondary-color);
+    color: #5c3410;
+    font-style: normal;
+    font-weight: bold;
+    padding: 0 2px;
+    border-radius: 3px;
+}
+
+.details-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 0.8rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.details-link:hover {
+    text-decoration: underline;
+}
+
+/* Recensioni nella card: elenco completo, scorrevole se lungo */
+.card-reviews {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px dashed #e0b45a;
+}
+
+.card-reviews h5 {
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    margin-bottom: 0.4rem;
+}
+
+.card-reviews .review-list {
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.card-reviews .review-item p {
+    margin-bottom: 0.1rem;
+    font-size: 0.85rem;
+}
+
+.review-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    max-width: 100%;
+    margin-top: 0.6rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #8a4b08;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .search-info {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .form-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-row > .form-group {
+        flex: 0 1 auto;
+        width: 100%;
+    }
+
+    .btn-search {
+        width: 100%;
+    }
+}

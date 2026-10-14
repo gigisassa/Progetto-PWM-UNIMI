@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../assets/css/base.css">
+    <link rel="stylesheet" href="../../../assets/css/components/navigation.css">
+    <link rel="stylesheet" href="../../../assets/css/layouts/internal.css">
+    <link rel="stylesheet" href="../../../assets/css/pages/recipes/ricettario.css">
+    <title>Ricettario</title>
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navigation" aria-label="Navigazione principale">
+            <h1 class="logo"><a href="../../../">PGRC</a></h1>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+                <span class="nav-toggle-icon" aria-hidden="true"></span>
+                <span>Menu</span>
+            </button>
+            <ul class="nav-menu" id="primary-menu">
+                <li><a href="../../../">Home</a></li>
+                <li><a href="../ricerca/">Ricerca Avanzata</a></li>
+                <li data-auth="user" class="nav-user" hidden>
+                    <a href="../../account/profilo/" class="user-chip" title="Vai al tuo profilo">
+                        <span class="user-avatar" aria-hidden="true"></span>
+                        <span class="user-name"></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+<main class="ricettario-page">
+
+    <section class="search-section">
+
+        <h2>Il Mio Ricettario</h2>
+
+        <input
+            type="text"
+            id="search-input"
+            placeholder="Cerca per nome, area o categoria..."
+        >
+
+    </section>
+
+    <div id="recipes-container" class="recipes-grid">
+
+    </div>
+
+</main>
+
+    <script src="../../../assets/js/core/storage.js"></script>
+    <script src="../../../assets/js/services/auth.js"></script>
+    <script src="../../../assets/js/pages/recipes/ricettario.js"></script>
+    <script src="../../../assets/js/components/navigation.js"></script>
+</body>
+</html>

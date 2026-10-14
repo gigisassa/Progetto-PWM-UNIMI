@@ -1,0 +1,201 @@
+/* PAGINA */
+.ricettario-page {
+    background: rgba(255,255,255,0.92);
+    border-radius: clamp(12px, 2vw, 20px);
+    padding: clamp(1rem, 3vw, 2rem);
+    margin: clamp(1rem, 3vw, 2rem) auto;
+    width: calc(100% - clamp(1rem, 4vw, 3rem));
+    max-width: 1200px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
+}
+
+
+/* BARRA RICERCA */
+
+.search-section {
+    margin-bottom: 2rem;
+}
+
+.search-section h2 {
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    margin: 0 0 1rem;
+}
+
+#search-input {
+    width: 100%;
+    min-height: 44px;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #d2d2d2;
+    border-radius: 8px;
+    outline: none;
+}
+
+#search-input:focus {
+    border-color: var(--text-color);
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
+}
+
+/* GRIGLIA RICETTE */
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+    gap: 1rem;
+}
+
+/* CARD */
+
+.recipe-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+}
+
+/* IMMAGINE */
+
+.recipe-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+/* CONTENUTO */
+
+.recipe-content {
+    padding: clamp(0.75rem, 2vw, 1rem);
+}
+
+/* NOME */
+
+.recipe-content h3 {
+    margin-bottom: 0.6rem;
+    color: #222;
+    font-size: 1.05rem;
+}
+
+/* INFO */
+
+.recipe-info p {
+    margin: 0.4rem 0;
+    color: #555;
+}
+
+/* NOTA PRIVATA */
+
+.recipe-note {
+    margin-top: 0.6rem;
+    padding: 0.5rem 0.7rem;
+    background-color: #fffbea;
+    border-left: 3px solid var(--secondary-color);
+    border-radius: 4px;
+    color: #5c3410;
+    font-size: 0.9rem;
+    font-style: italic;
+    white-space: pre-line; /* mantiene gli a capo scritti dall'utente */
+    overflow-wrap: anywhere;
+}
+
+.recipe-note::before {
+    content: "📝 ";
+    font-style: normal;
+}
+
+/* AZIONI */
+
+.recipe-actions {
+    margin-top: 1rem;
+
+    display: flex;
+    gap: 0.8rem;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.recipe-actions button,
+.recipe-actions a {
+    min-height: 44px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: normal;
+    text-align: center;
+}
+
+.open-btn {
+    background-color: var(--primary-color);
+    color: white;
+    display: inline-block;
+    text-align: center;
+    font-size: 1rem;
+    font-family: inherit;
+    padding: 0.55rem 0.8rem;
+}
+
+/* Scurisci leggermente al passaggio del mouse */
+.open-btn:hover,
+.recipe-remove:hover {
+    filter: brightness(0.9);
+}
+
+.recipe-remove {
+    background-color: #e53935;
+    color: white;
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.favorite-btn {
+    background: transparent;
+    padding: 0.45rem 0.45rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    width: 100%;
+}
+
+/* Heart svg styles */
+.favorite-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--primary-color);
+    fill: none;
+    stroke-width: 1.5;
+}
+
+.favorite-btn.active svg {
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
+}
+
+.favorite-btn:hover svg {
+    filter: brightness(0.95);
+}
+
+/* NESSUNA RICETTA */
+
+#empty-message {
+    grid-column: 1 / -1; /* occupa tutta la riga della griglia, non solo la prima colonna */
+    text-align: center;
+    text-decoration: double;
+    font-weight: bold;
+    font-size: clamp(1.25rem, 4vw, 2rem);
+    color: #e67e22;
+}
