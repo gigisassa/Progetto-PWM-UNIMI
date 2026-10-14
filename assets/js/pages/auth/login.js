@@ -10,8 +10,11 @@ if (AuthManager.isLoggedIn()) {
     window.location.href = '../../account/profilo/';
 }
 
-// Arrivo dalla registrazione o dalla cancellazione del profilo
+// Arrivo dalla registrazione, dalla cancellazione del profilo o da una pagina riservata
 const loginParams = new URLSearchParams(window.location.search);
+if (loginParams.get('reason') === 'ricettario') {
+    showLoginMessage('Devi effettuare il login per accedere al ricettario.');
+}
 if (loginParams.get('registered')) {
     showLoginMessage('Account creato con il tuo ricettario personale. Accedi per iniziare.', 'success');
 }

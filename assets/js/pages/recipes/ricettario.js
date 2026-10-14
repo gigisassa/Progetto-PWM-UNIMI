@@ -1,5 +1,6 @@
-// Il ricettario è personale: senza login si torna alla pagina di accesso
-AuthManager.requireAuth('../../auth/login/');
+// Il ricettario è personale: senza login si torna alla pagina di accesso,
+// che mostra il motivo del reindirizzamento
+AuthManager.requireAuth('../../auth/login/?reason=ricettario');
 
 const container = document.getElementById("recipes-container");
 let ricettario = StorageManager.getRicettario();
