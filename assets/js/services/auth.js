@@ -88,11 +88,6 @@ class AuthManager {
             throw new Error('Credenziali non valide');
         }
 
-        // Utenti creati prima dell'introduzione dei ricettari separati
-        if (!StorageManager.getRicettari()[user.id]) {
-            StorageManager.createRicettario(user.id);
-        }
-
         StorageManager.setSession(user.id, remember);
         return user;
     }
